@@ -37,6 +37,6 @@ yarn-debug.log*
 
 /config/database.yml
 
-Gemfile.lock
-yarn.lock
+# Gemfile.lock
+# yarn.lock
 
