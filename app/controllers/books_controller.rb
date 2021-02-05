@@ -10,17 +10,20 @@ class BooksController < ApplicationController
 
 	def create
 
-		author = Author.find_by_name(book_params[:author_first_name], book_params[:author_last_name])
+		render json: params
 
-		author = author || Author.new(first_name: book_params[:author_first_name], last_name: book_params[:author_last_name])
+		# author = Author.find_by_name(book_params[:author_first_name], book_params[:author_last_name])
 
-		book = Book.create(title: book_params[:title], genre: book_params[:genre], author: author)
+		# author = author || Author.new(first_name: book_params[:author_first_name], last_name: book_params[:author_last_name])
 
-		redirect_to book_path(book.id)
+		# book = Book.create(title: book_params[:title], genre: book_params[:genre], author: author)
+
+		# redirect_to book_path(book.id)
 	end
 
 	def new
 		@book = Book.new
+		@book.build_author
 	end
 
 	private
